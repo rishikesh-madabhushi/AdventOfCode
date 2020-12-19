@@ -4,7 +4,6 @@ f = open("day_18.txt")
 #f = open("test.txt")
 
 def expr(a, op, b):
-    print("Evaluating %d %s %d"%(a, op, b))
     if op == '+':
         return a + b
     elif op == '-':
@@ -17,7 +16,6 @@ def expr(a, op, b):
 def evaluate(terms, idx):
     value = 0
     new_idx = idx + 1
-    print(idx)
     if terms[idx].isnumeric():
         value = int(terms[idx])
     elif terms[idx] == '(':
@@ -56,7 +54,6 @@ for l in f.readlines():
     terms = l.rstrip().split()
     print(terms)
     (value, new_idx) = evaluate(terms, 0)
-    print(value)
     sumall += value
 
 print(sumall)
